@@ -54,7 +54,6 @@ const MenuImg =styled.img`
 `
 const MenuImgDiv =styled.div`
   display: flex;
-
 `
 
 
@@ -72,7 +71,7 @@ const Wallet=styled.div`
 const Icon_wallet=styled.div`
   width: 20%;
   height: 100%;
-  margin-right: 1px;
+  margin-right: 3px;
 `
 const ConnectDiv=styled.div`
   width: 80%;

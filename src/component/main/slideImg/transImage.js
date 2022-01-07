@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TransDiv = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 55vh; //수정
   background-image:url(images/1.png);
   background: linear-gradient(to bottom, rgba(76, 71, 67, 0.18), rgba(31, 29, 27, 0.89)),url(${props=>props.Path});
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ const TransSum=styled.div`
 `
 
 const ExpButton=styled.div`
-  width: 15%;
+  width: 20%; //수정
   height: 56px;
   border-radius: 6px;
   border: solid 1px white;

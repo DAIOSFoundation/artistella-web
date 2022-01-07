@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FilterDiv = styled.div`
-  width:300px;
-  height: 400px;
+  width:20vw;
+  height: 60vh;
   padding: 20px;
   margin-right:27px;
   border-radius:8px;
   background-color:#faf8f4;
   display: block;
   position:absolute;
-  top:30px;
+  top:0px;
 `
 const Title=styled.h1`
   margin-bottom:18px;

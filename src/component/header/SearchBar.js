@@ -16,6 +16,7 @@ const SearchButton=styled.div`
   align-items:center;
   justify-content: center;
   background-color: white;
+  margin:0 5px;
 `
 const SearchDiv=styled.div`
   width : 30vw;

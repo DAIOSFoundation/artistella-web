@@ -88,7 +88,7 @@ const BoxIcon=styled.img`
   width: 24px;
   height: 24px;
   object-fit: contain;
-  margin-right:11px;
+  margin:0 5px;
 `
 
 function SearchView(){
