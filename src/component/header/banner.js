@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import MenuIn from './MenuIn';
 import Searchs from './SearchBar';
+import Wallet from './Wallet';
 
 const HeaderNav = styled.nav`
   margin: 0 auto;
@@ -31,13 +32,12 @@ const Menudiv = styled.div`
     display: flex;
     align-items: center;
     height: 100%;
-    width: 30%;
+    width: 92%;
     color: #252220;
     font-size: 1rem;
-    *{
-      width: 20%;
+    > *  {
       align-items: center;
-      justify-content: flex-start;
+      margin-top: 8px;
     }
 `
 
@@ -53,45 +53,25 @@ const MenuImg =styled.img`
     height: 36px;
 `
 const MenuImgDiv =styled.div`
-  display: flex;
-`
-
-
-const Wallet=styled.div`
-  width: 30%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content : center;
-  border-radius: 6px;
-  border: solid 1px #252220;
-  background-color: #fff;
-  padding: 5px;
-`
-const Icon_wallet=styled.div`
-  width: 20%;
-  height: 100%;
-  margin-right: 3px;
-`
-const ConnectDiv=styled.div`
-  width: 80%;
-  height: 100%;
+  width: 10%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  span {
-    width: auto;
-    font-size: 0.8rem;
-  }
+
 `
 
-const ImgWallet = styled.img`
-  width : 100%;
-  height: 100%;
-`
+
+
+
+
+
 
 const LogoImg = styled.img`
-  width : 98%;
+  width :100%;
+`
+
+const TempDiv=styled.div`
+  display:flex;
+  justify-content:space-between;
 `
 
 function Banner(){
@@ -99,22 +79,17 @@ function Banner(){
       <HeaderNav>
         <NavDiv>
           <Logo onClick={LogoClick}><LogoImg src='images/artistella-logo.png' srcSet='images/artistella-logo@2x.png 2x, images/artistella-logo@3x.png 3x'/></Logo>
-          <Searchs />
           <Menudiv>
+            <Searchs />
+            <TempDiv>
             <MenuIn child="BROWSE"/>
             <MenuIn child="SELL"/>
             <MenuIn child="RAYDIUM"/>
             <MenuImgDiv>
               <MenuImg src="images/icon-id.png" srcSet="images/icon-id@2x.png 2x,images/icon-id@3x.png 3x"/>
             </MenuImgDiv>
-            <Wallet>
-              <Icon_wallet>
-                <ImgWallet src="images/icon-wallet.png" srcSet="images/icon-wallet@2x.png 2x, images/icon-wallet@3x.png 3x"/>
-              </Icon_wallet>
-              <ConnectDiv>
-                <span>Connect Wallet</span>
-              </ConnectDiv>
-            </Wallet>
+            <Wallet />
+            </TempDiv>
         </Menudiv>
       </NavDiv>
     </HeaderNav>

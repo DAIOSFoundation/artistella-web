@@ -3,14 +3,21 @@ import styled from "styled-components"
 
 
 const MenudivIn = styled.div`
-    width: 20%;
+    padding: 10px;
+    height: 50%;
     display: flex;
     align-items: center;
     font-size: 1rem;
 `
 
 const MenuDiv = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     span{
+        width: auto;
+        height: auto;
+        display: flex;
         position: relative;
 
     }
@@ -21,6 +28,7 @@ const MenuDiv = styled.div`
             height: 3px;
             transition: all 0.2s ease-in-out;
             transition-duration: 0.3s;
+            bottom: -5px;
             opacity: 0;
             background-color: black;
         }
