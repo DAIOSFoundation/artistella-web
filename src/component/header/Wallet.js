@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useWallet } from './useWallet'
 
 const WalletD=styled.div`
-    width: 100%;
+    width: 90%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding-left: 10px;
     &:hover{
         cursor:pointer;
     }
@@ -59,7 +59,7 @@ const Walletdiv = styled.div`
     padding: 5px;
     margin-left: 5px;
 
-    @media(max-width:1300px ){
+    @media(max-width:1300px){
         border: none;
     }
 `
@@ -88,7 +88,7 @@ function Wallet(){
     return (    
         <Div>
             {isWallet ? (
-                <EmptyDiv/>
+                <EmptyDiv>Welcome!</EmptyDiv>
             ) : (
                 <WalletD>
                     <Walletdiv>

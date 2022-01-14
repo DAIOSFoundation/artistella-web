@@ -10,7 +10,7 @@ const ImageSlider = styled.div`
   height: 100%;
 
   .slick-dots{
-    top: 550px;
+    top: 55vh;
     li button:before{
       color: #fbac00;
       font-size: 10px;

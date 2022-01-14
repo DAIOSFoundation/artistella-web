@@ -32,7 +32,7 @@ const Menudiv = styled.div`
     display: flex;
     align-items: center;
     height: 100%;
-    width: 92%;
+    width: 89%;
     color: #252220;
     font-size: 1rem;
     > *  {
@@ -42,7 +42,7 @@ const Menudiv = styled.div`
 `
 
 const Logo=styled.div`
-  width: 8%;
+  width: 10%;
   height: 50%;
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@ const LogoImg = styled.img`
 `
 
 const TempDiv=styled.div`
-  width:40%;
+  width:50%;
   display:flex;
   justify-content:space-between;
 `
@@ -98,9 +98,9 @@ function Banner(){
             </MenuImgDiv>
             <Wallet />
             </TempDiv>
-        </Menudiv>
-      </NavDiv>
-    </HeaderNav>
+          </Menudiv>
+        </NavDiv>
+      </HeaderNav>
   )
 }
 

@@ -34,6 +34,9 @@ background: #faf8f4;
   .slick-dots{
     top: 107%;
   }
+  li button:before{
+    font-size: 10px;
+  }
 `
 
 const PageSlider = styled(Slider)`

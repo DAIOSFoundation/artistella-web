@@ -47,7 +47,7 @@ function SubGrid(){
       <Grid>
         { data.map((data) => 
           <SubElm img={data.img} header={data.header} text={data.text} price={data.price} />
-        )  }
+        )}
         
       </Grid>
     </GridDiv>

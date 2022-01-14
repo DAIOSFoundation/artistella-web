@@ -7,8 +7,7 @@ border: solid 1px #dfd9ce;
 `
 const  BroImgDiv = styled.div`
   width: 100%;
-  height : 80%;
-
+  height : 70%;
 `
 const  BroContentDiv = styled.div`
   width: 85%;
@@ -17,7 +16,7 @@ const  BroContentDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 10px auto;
-  padding-bottom: 12px;
+  padding: 30px 0 12px 0;
    *{
     margin-bottom: 10px;
   }

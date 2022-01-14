@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Searchbar = styled.input`
   border : none;
-  width:95%;
+  width: 80%;
   font-size : 1rem;
   :focus {
     outline : none;
@@ -23,7 +23,7 @@ const SearchButton=styled.div`
 `
 const SearchDiv=styled.div`
   margin-top: 4px;
-  width : 60%;
+  width : 70%;
   height: 40%;
   display:flex;
   align-items: center;
@@ -32,7 +32,7 @@ const SearchDiv=styled.div`
 `
 
   const SearchBardiv = styled.div`
-    width : 72%;
+    width : 90%;
     height: 40px;
     display:flex;
     border-radius: 6px;
