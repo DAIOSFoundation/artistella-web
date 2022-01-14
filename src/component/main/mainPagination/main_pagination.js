@@ -30,6 +30,10 @@ background: #faf8f4;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .slick-dots{
+    top: 107%;
+  }
 `
 
 const PageSlider = styled(Slider)`

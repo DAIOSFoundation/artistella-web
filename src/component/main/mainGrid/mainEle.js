@@ -8,6 +8,10 @@ const EleDiv_m=styled(EleDiv)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &:hover{
+    cursor:pointer;
+  }
 `
 
 const ImageDate=styled.p`

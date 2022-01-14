@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import GridElm from './mainEle'
 
 export const GridDiv = styled.div`
-  padding: 50px 0px;
+  padding: 70px 0px;
   width: 100%;
   background: #faf8f4;
   display: flex;

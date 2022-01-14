@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import SlideImage from '../main/slideImg/slider';
 
 const Searchbar = styled.input`
   border : none;
   width:95%;
-
+  font-size : 1rem;
   :focus {
     outline : none;
   }
@@ -12,28 +11,32 @@ const Searchbar = styled.input`
 const SearchButton=styled.div`
   border: none;
   width: 5%;
-  margin: 0 2px;
+  margin: 0 10px;
   display:flex;
   align-items:center;
   justify-content: center;
   background-color: white;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const SearchDiv=styled.div`
-  margin-top: 8px;
+  margin-top: 4px;
   width : 60%;
   height: 40%;
   display:flex;
   align-items: center;
   justify-content: center;
-
+  margin: 0 auto;
 `
 
   const SearchBardiv = styled.div`
-    width : 60%;
-    height: 32px;
+    width : 72%;
+    height: 40px;
     display:flex;
     border-radius: 6px;
-  align-items: center;
+    align-items: center;
     border : 1px solid black;
 
   :focus-within{

@@ -21,7 +21,7 @@ function Main(){
             <HowToUse/>
             <Footer/>
       </Layout>
-          )
+  )
 };
 
 

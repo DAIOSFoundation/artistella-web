@@ -26,7 +26,7 @@ const UseTitle=styled.div`
 
 const UseGrid=styled.div`
   width: 80%;
-  height: 60%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   display: grid;

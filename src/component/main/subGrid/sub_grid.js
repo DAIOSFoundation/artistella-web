@@ -10,6 +10,7 @@ const Grid=styled.div`
   grid-template-columns: repeat(4,1fr);
   grid-auto-rows: minmax(200px,auto);
   grid-gap: 26px;
+
 `
 const GridTitle = styled.span`
   font-size:30px;
@@ -17,18 +18,23 @@ const GridTitle = styled.span`
   color:black;
 `
 const MoreButton = styled.span`
-  width: 67px;
+  width: 75px;
   height: 32px;
   padding: 8px 12px;
   border-radius:6px;
   border: solid 1px black;
   text-align: center;
   float:right;
+
+  &:hover{
+    cursor:pointer;
+  }
 `
 
 const TopDiv=styled.div`
   width: 80%;
   margin-bottom: 16px;
+  padding-top: 16px;
 `
 
 function SubGrid(){

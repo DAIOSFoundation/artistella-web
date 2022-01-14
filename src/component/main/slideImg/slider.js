@@ -8,6 +8,14 @@ import TransImage from './transImage';
 const ImageSlider = styled.div`
   width: 100%;
   height: 100%;
+
+  .slick-dots{
+    top: 550px;
+    li button:before{
+      color: #fbac00;
+      font-size: 10px;
+    }
+  }
 `
 
 
@@ -53,7 +61,7 @@ function SlideImage(){
     slidesToScroll:1,
     autoplay: true,
     autoplaySpeed: 5500,
-    arrows:false
+    arrows:false,
   };
   return(
     <ImageSlider>

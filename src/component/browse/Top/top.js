@@ -36,6 +36,10 @@ const ActLine=styled.span`
   border-image-slice:1;
   display:inline-block; 
   padding-bottom: 4px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const ItemIcon=styled.img`
   line-height:29px;

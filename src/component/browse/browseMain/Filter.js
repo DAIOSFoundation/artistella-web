@@ -28,6 +28,10 @@ const Select=styled.div`
   align-items: center;
   justify-content: space-around ;
   position:relative;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const SelectLogo=styled.img`
   width: 7%;
@@ -70,6 +74,10 @@ const ApplyDiv=styled.div`
   display:flex;
   justify-content: center;
   align-items:center;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 function Filter(){
   return(

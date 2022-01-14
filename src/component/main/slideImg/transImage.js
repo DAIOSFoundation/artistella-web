@@ -51,6 +51,10 @@ const ExpButton=styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const TextSpan=styled.span`
   display: inline-block;

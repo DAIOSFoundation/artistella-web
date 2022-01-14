@@ -5,6 +5,7 @@ import BrowseGrid from './BrowseGrid';
 const SearchRayout=styled.div`
   width:100%;
   display:block;
+  padding-left: 20px;
 `
 
 const SearchContent = styled.div`
@@ -34,26 +35,32 @@ const Divbar = styled.div`
   :focus-within{
     border: 2px solid black;
   }
-  `
+`
 
 const Search =  styled.input`
   width: 90%;
   height: 80%;
+  margin-left: 10px;
+  font-size: 1.1rem;
   border: none;
   :focus{
     outline: none;
   }
-  `
+`
 
   const Button =styled.button`
     background-color: white;
     border: none;
-  `
+
+    &:hover{
+      cursor: pointer;
+    }
+`
 
   const Idiv = styled.div`
   display  : flex ;
   justify-content: space-between;
-  `
+`
 
 const ListDiv =styled.div`
   width: 60%;
@@ -74,6 +81,11 @@ const ListIcon=styled.img`
 const Recently=styled.span`
   font-size:1em;
   line-height:1.6;
+  padding-left: 7px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const BoxView=styled.div`
   width: 30%;
@@ -89,6 +101,10 @@ const BoxIcon=styled.img`
   height: 24px;
   object-fit: contain;
   margin:0 5px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 function SearchView(){

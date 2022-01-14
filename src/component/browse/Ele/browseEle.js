@@ -17,6 +17,7 @@ const  BroContentDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 10px auto;
+  padding-bottom: 12px;
    *{
     margin-bottom: 10px;
   }
