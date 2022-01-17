@@ -3,7 +3,10 @@ import { EleDiv, GridImage, ImageHead_s, ImageSummary, onEle, Price } from "../.
 
 
 const EleDiv_b=styled(EleDiv)`
-border: solid 1px #dfd9ce;
+  border: solid 1px #dfd9ce;
+  &:hover{
+    cursor: pointer;
+  }
 `
 const  BroImgDiv = styled.div`
   width: 100%;

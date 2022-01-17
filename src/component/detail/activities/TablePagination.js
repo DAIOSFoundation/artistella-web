@@ -15,6 +15,9 @@ const Styles = styled.div`
     padding-top:5px;
     color:black;
     font-size:1rem;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   li:nth-child(${props=>props.Current}){
@@ -34,6 +37,9 @@ const RightArrow=styled.div`
   border-radius: 8px; 
   color: #9c7e6a;
   padding:6px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 const LeftArrow=styled.div`
   background-color:white;
@@ -44,6 +50,9 @@ const LeftArrow=styled.div`
   border-radius: 8px;
   color: #9c7e6a;
   padding:6px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 const TablePagination = (props) => {

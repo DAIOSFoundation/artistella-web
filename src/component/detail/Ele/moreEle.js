@@ -12,6 +12,9 @@ const EleDiv_More=styled(EleDiv)`
   justify-content: center;
   width: 80%;
   margin: 0 auto;
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 const MoreImgDiv = styled.div`
