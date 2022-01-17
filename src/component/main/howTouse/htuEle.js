@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Div =styled.div`
 width: 100%;
-height: 100%;
+height: 35vh;
 border-radius: 6px;
 box-shadow: 2px 2px 20px 0 rgba(195, 179, 160, 0.62);
 background-color: white;

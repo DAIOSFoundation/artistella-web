@@ -54,6 +54,10 @@ const WalletButton=styled.div`
   align-items:center;
   justify-content:center;
   margin-top:16px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const ListDiv=styled.div`
   width:35vw;
@@ -76,6 +80,10 @@ const Up=styled.img`
   object-fit:contain;
   position:absolute;
   right:20px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 const Down=styled.img`
   width:12px;
@@ -83,6 +91,10 @@ const Down=styled.img`
   object-fit:contain;
   position:absolute;
   right:20px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 const Text=styled.span`

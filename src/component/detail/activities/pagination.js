@@ -23,6 +23,9 @@ const Select =styled.select`
   &::-ms-expand { 
     display: none;
   }
+  &:hover{
+    cursor: pointer;
+  }
 `
 const Option=styled.div`
   position:absolute;

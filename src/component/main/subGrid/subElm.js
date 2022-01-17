@@ -10,6 +10,10 @@ const EleDiv_s = styled(EleDiv)`
   align-items: center;
   display: flex;
   flex-direction: column;
+
+  &:hover{
+    cursor:pointer;
+  }
 `;
 
 const SubImgDiv = styled.div`

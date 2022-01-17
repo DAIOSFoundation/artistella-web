@@ -32,7 +32,7 @@ const Menudiv = styled.div`
     display: flex;
     align-items: center;
     height: 100%;
-    width: 92%;
+    width: 89%;
     color: #252220;
     font-size: 1rem;
     > *  {
@@ -42,21 +42,28 @@ const Menudiv = styled.div`
 `
 
 const Logo=styled.div`
-  width: 8%;
+  width: 10%;
   height: 50%;
   display: flex;
   justify-content: center;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 const MenuImg =styled.img`
     width: 36px;
     height: 36px;
+
+    &:hover{
+      cursor: pointer;
+    }
 `
 const MenuImgDiv =styled.div`
-  width: 10%;
+  width: 50%;
   display: flex;
   justify-content: center;
-
 `
 
 
@@ -66,10 +73,11 @@ const MenuImgDiv =styled.div`
 
 
 const LogoImg = styled.img`
-  width :100%;
+  width :140%;
 `
 
 const TempDiv=styled.div`
+  width:50%;
   display:flex;
   justify-content:space-between;
 `
@@ -90,9 +98,9 @@ function Banner(){
             </MenuImgDiv>
             <Wallet />
             </TempDiv>
-        </Menudiv>
-      </NavDiv>
-    </HeaderNav>
+          </Menudiv>
+        </NavDiv>
+      </HeaderNav>
   )
 }
 

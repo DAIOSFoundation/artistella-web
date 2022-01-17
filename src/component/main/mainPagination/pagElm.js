@@ -7,11 +7,15 @@ import { GridImage, ImageHead, ImageSummary , onEle, EleDiv, GridImgDiv, GridCon
 
 const EleDiv_p=styled(EleDiv)`
   background-color: white;
-    width: 90%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-`;
+  width: 90%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &:hover{
+    cursor:pointer;
+  }
+`
 
 const PagContnet = styled(GridContent)`
   width: 80%;

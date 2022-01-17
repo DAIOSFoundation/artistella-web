@@ -5,7 +5,7 @@ import UseEle from './htuEle';
 const UseDiv= styled.div`
   padding: 40px 0px;
   width:100%;
-  height: 40vh;
+  height: 63vh;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,7 @@ const UseDiv= styled.div`
 const UseTitle=styled.div`
   width: 100%;
   height: 10%;
+  margin-top: 4vh;
   margin-bottom: 50px;
   font-size:30px;
   font-weight:bold;
@@ -26,7 +27,7 @@ const UseTitle=styled.div`
 
 const UseGrid=styled.div`
   width: 80%;
-  height: 60%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   display: grid;
