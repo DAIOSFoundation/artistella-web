@@ -7,9 +7,11 @@ export const GlobalStyle = createGlobalStyle`
  ${reset}
  *{
    box-sizing: border-box;
-   font-family: 'Roboto';
    margin:0;
    padding:0;
+ }
+ body{
+  font-family: 'Roboto';
  }
  @font-face {
   font-family: 'Roboto';

@@ -8,12 +8,18 @@ const MenudivIn = styled.div`
     display: flex;
     align-items: center;
     font-size: 1rem;
+    font-family: 'Roboto';
 `
 
 const MenuDiv = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    &:hover{
+        cursor: pointer;
+    }
+
     span{
         width: auto;
         height: auto;
@@ -30,7 +36,7 @@ const MenuDiv = styled.div`
             transition-duration: 0.3s;
             bottom: -5px;
             opacity: 0;
-            background-color: black;
+            background-color: #fbac00;
         }
 
         span:hover:after{

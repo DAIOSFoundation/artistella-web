@@ -1,15 +1,18 @@
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
-
-
+import { useWallet } from './useWallet'
 
 const WalletD=styled.div`
-    width: 100%;
+    width: 90%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 10px;
+    &:hover{
+        cursor:pointer;
+    }
 `
-
 
 const Icon_wallet=styled.div`
     width: 30px;
@@ -18,9 +21,6 @@ const Icon_wallet=styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
-   
-
 `
 
 const ConnectDiv=styled.div`
@@ -34,7 +34,7 @@ const ConnectDiv=styled.div`
     }
     span {
         width: auto;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         }
 `
 
@@ -49,7 +49,7 @@ const ImgWallet = styled.img`
 `
 
 const Walletdiv = styled.div`
-    width: 100%;
+    width: 170px;
     display: flex;
     align-items: center;
     justify-content : center;
@@ -57,30 +57,51 @@ const Walletdiv = styled.div`
     border: solid 1px #252220;
     background-color: #fff;
     padding: 5px;
-    margin-left: 10px;
+    margin-left: 5px;
 
-    @media(max-width:1300px ){
-
+    @media(max-width:1300px){
         border: none;
     }
+`
+const Div = styled.div`
+    width: 100%;
+`
+const EmptyDiv = styled.div`
+    width: 0%;
 `
 
 
 function Wallet(){
+    const { walletAddress, connectWallet } = useWallet();
+    const [ isWallet, setWallet ] = useState(false);
 
-
-    return (    
+    useEffect(() => {
         
-        <WalletD>
-            <Walletdiv>
-                <Icon_wallet>
-                    <ImgWallet src="images/icon-wallet.png" srcSet="images/icon-wallet@2x.png 2x, images/icon-wallet@3x.png 3x"/>
-                </Icon_wallet>
-                <ConnectDiv>
-                    <span>Connect Wallet</span>
-                </ConnectDiv>
-            </Walletdiv>
-        </WalletD>
+        if (walletAddress) {
+          //setAddress(walletAddress)
+          console.log(walletAddress);
+          setWallet(true);
+        }
+        
+      }, [walletAddress])
+    
+    return (    
+        <Div>
+            {isWallet ? (
+                <EmptyDiv>Welcome!</EmptyDiv>
+            ) : (
+                <WalletD>
+                    <Walletdiv>
+                        <Icon_wallet>
+                            <ImgWallet src="images/icon-wallet.png" srcSet="images/icon-wallet@2x.png 2x, images/icon-wallet@3x.png 3x"/>
+                        </Icon_wallet>
+                        <ConnectDiv onClick={connectWallet}>
+                            <span>Connect Wallet</span>
+                        </ConnectDiv>
+                    </Walletdiv>
+                </WalletD>
+            )}
+        </Div>
     )
 }
 

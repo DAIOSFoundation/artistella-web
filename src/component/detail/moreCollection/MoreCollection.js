@@ -30,6 +30,9 @@ const Up=styled.img`
   object-fit:contain;
   position:absolute;
   right:20px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 const Down=styled.img`
   width:12px;
@@ -37,6 +40,9 @@ const Down=styled.img`
   object-fit:contain;
   position:absolute;
   right:20px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 const SlideDiv=styled.div`
   background-color:#faf8f4;

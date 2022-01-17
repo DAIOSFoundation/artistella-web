@@ -5,12 +5,13 @@ export const GridImage=styled.img`
     min-width: 100px;
     height:100%;
     min-height: 100px;
-    `
+`
 
 export const Price = styled.p`
   font-size: 1rem;
   font-weight: bold;
   color: black;
+  padding-top: 10px;
 `
 
 
@@ -23,14 +24,14 @@ export const ImageHead_s=styled.p`
 export const ImageSummary = styled.p`
     font-size:0.875rem;
     color:#737170;
-    `
+`
 
 
 export const ImageHead = styled.p`
     font-size:1.25rem;
     font-weight:bold;
     color:black;
-    `
+`
 
 
 export const EleDiv = styled.div`
