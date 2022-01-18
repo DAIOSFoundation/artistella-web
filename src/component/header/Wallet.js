@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
-import { useWallet } from './useWallet'
+import { useWallet } from './useWallet';
+import { SetUpModal } from './SetUpModal';
 
 const WalletD=styled.div`
     width: 90%;
@@ -74,6 +75,11 @@ const EmptyDiv = styled.div`
 function Wallet(){
     const { walletAddress, connectWallet } = useWallet();
     const [ isWallet, setWallet ] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(prev => !prev); //toggle
+    }
 
     useEffect(() => {
         
@@ -91,14 +97,15 @@ function Wallet(){
                 <EmptyDiv>Welcome!</EmptyDiv>
             ) : (
                 <WalletD>
-                    <Walletdiv>
+                    <Walletdiv onClick={openModal}>
                         <Icon_wallet>
                             <ImgWallet src="images/icon-wallet.png" srcSet="images/icon-wallet@2x.png 2x, images/icon-wallet@3x.png 3x"/>
                         </Icon_wallet>
-                        <ConnectDiv onClick={connectWallet}>
+                        <ConnectDiv>
                             <span>Connect Wallet</span>
                         </ConnectDiv>
                     </Walletdiv>
+                    <SetUpModal showModal={showModal} setShowModal={setShowModal}/>
                 </WalletD>
             )}
         </Div>
