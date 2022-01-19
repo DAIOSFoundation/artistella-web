@@ -1,5 +1,7 @@
 import React from 'react'
+import { useQuery } from 'react-query'
 import styled from 'styled-components'
+import {  Skull } from '../../../api'
 import GridElm from './mainEle'
 
 export const GridDiv = styled.div`
@@ -32,64 +34,28 @@ const GridTitle = styled.div`
     color:black;
   }
 `
-function MainGrid(){
-  return(
+function MainGrid() {
+  const { isLoading, data } = useQuery("skull", Skull)
+  const monekyData = data?.results;
+  console.log(monekyData);
+
+  return isLoading ? null : ( data ?
     <GridDiv>
       <GridTitle>
         <h1>Lorem Ipsum</h1>
       </GridTitle>
       <Grid>
         {
-          data.map( (data) => 
-
-            <GridElm img={data.img} header={data.header} text={data.text} date={data.date} />
+          monekyData?.map( res =>
+            <GridElm img={res.img} header={res.title} text={res.content} date={res.createdAt} />
           )
         }
       </Grid>
-    </GridDiv>
+    </GridDiv> : null
   )
 }
 
 
-const data =[
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-
-]
 
 
 export default MainGrid;
