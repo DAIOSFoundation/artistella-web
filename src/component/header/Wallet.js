@@ -73,7 +73,7 @@ const EmptyDiv = styled.div`
 
 
 function Wallet(){
-    const { walletAddress, connectWallet } = useWallet();
+    const { walletAddress } = useWallet();
     const [ isWallet, setWallet ] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
@@ -82,14 +82,12 @@ function Wallet(){
     }
 
     useEffect(() => {
-        
         if (walletAddress) {
           //setAddress(walletAddress)
           console.log(walletAddress);
           setWallet(true);
-        }
-        
-      }, [walletAddress])
+        } 
+    }, [walletAddress])
     
     return (    
         <Div>
@@ -105,7 +103,7 @@ function Wallet(){
                             <span>Connect Wallet</span>
                         </ConnectDiv>
                     </Walletdiv>
-                    <SetUpModal showModal={showModal} setShowModal={setShowModal}/>
+                    <SetUpModal showModal={showModal} setShowModal={setShowModal} setWallet={setWallet}/>
                 </WalletD>
             )}
         </Div>

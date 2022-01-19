@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useCallback } from 'react'
+import { useWallet } from './useWallet';
 import styled from 'styled-components'
-import { MdClose } from 'react-icons/md'
+import { MdClose } from 'react-icons/md' // icon
 
 const Background = styled.div`
     width: 100%;
@@ -15,8 +16,8 @@ const Background = styled.div`
 `
 
 const ModalWrapper = styled.div`
-    width: 800px;
-    height: 500px;
+    width: 500px;
+    height: 550px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     background: #fff;
     color: #000;
@@ -34,19 +35,30 @@ const ModalContent = styled.div`
     line-height:1.8;
     color: #141414;
 
+    h1{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
     p{
-        margin-bottom: 1rem;
+        margin-bottom: 5vh;
     }
 
     button{
+        height: 9%;
+        width: 80%;
         padding: 10px 24px;
         background: #141414;
         color: #fff;
+        border-radius: 5px;
         border: none;
+        margin-bottom: 23px;
+        font-size: 1rem;
+        cursor: pointer;
     }
 `
 
-const CloseModalButton = styled(MdClose)`
+const CloseModalButton = styled(MdClose)` // react-icons
     cursor: pointer;
     position: absolute;
     top: 20px;
@@ -57,7 +69,8 @@ const CloseModalButton = styled(MdClose)`
     z-index: 10;
 `
 
-export const SetUpModal = ({showModal, setShowModal}) => {
+export const SetUpModal = ({showModal, setShowModal, setWallet}) => {
+    const { connectWallet } = useWallet();
     // const modalRef = useRef();
 
     // const closeModal = e => { // 모달 외부 클릭시 닫힘
@@ -84,9 +97,11 @@ export const SetUpModal = ({showModal, setShowModal}) => {
                 <Background>
                     <ModalWrapper showModal={showModal}>
                         <ModalContent>
-                            <h1>Lorem Ipsum</h1>
-                            <p>description</p>
-                            <button>Button</button>
+                            <h1>Connect Wallet</h1>
+                            <p>Select Wallet to Connect with ARTISTELLA</p>
+                            <button onClick={() => connectWallet("phantom", setShowModal, setWallet)}>Phantom</button>
+                            <button onClick={() => connectWallet("slope", setShowModal, setWallet)}>Slope</button>
+                            <button onClick={() => connectWallet("solFlare", setShowModal, setWallet)}>SolFlare</button>
                         </ModalContent>
                         <CloseModalButton aria-label='Close modal' 
                             onClick={() => setShowModal(prev => !prev)}/>
