@@ -103,11 +103,7 @@ function Wallet(){
                             <span>Connect Wallet</span>
                         </ConnectDiv>
                     </Walletdiv>
-<<<<<<< HEAD
                     <SetUpModal showModal={showModal} setShowModal={setShowModal} setWallet={setWallet}/>
-=======
-                    <SetUpModal showModal={showModal} setShowModal={setShowModal}/>
->>>>>>> 5e47491876898544298589cb2988a8efc3c4a7c0
                 </WalletD>
             )}
         </Div>
