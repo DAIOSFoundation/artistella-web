@@ -23,9 +23,14 @@ export const itemList = {
 
 export const itemDetail = {
         mint: ({ queryKey }) => {
-                const [_, mintAdress ] = queryKey;
+                const [_, mintAdress] = queryKey;
                 return fetch(
                 `${BASE_URL}/getNFTByMintAddress/${mintAdress}`)
+                .then((res) => res.json())},
+        moreCollection: ({ queryKey }) => {
+                const [_, collectionSymbol] = queryKey;
+                return fetch(
+                `${BASE_URL}/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionSymbol}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
                 .then((res) => res.json())},
 }
 

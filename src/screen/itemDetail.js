@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ItemHistory from '../component/detail/Detailcontent/itemHistoty'
 import Activities from '../component/detail/activities/activities'
@@ -9,6 +9,8 @@ import Layout from '../component/layout/Layout';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { itemDetail } from '../api'
+import { useRecoilState, useSetRecoilState} from 'recoil';
+import { collectionName } from '../atoms';
 
 
 const DetailLayout=styled.div`
@@ -32,29 +34,33 @@ function ItemDetail() {
   const { mintAdress: mint } = useParams();
   const { isLoading, data } = useQuery(["itemDetail", mint], itemDetail.mint);
   const detailData = data?.results;
-  console.log("여기",data?.results);
+  const [_,setvalue] = useRecoilState(collectionName);
+  useEffect(() => {
+    setvalue(detailData?.collectionName);
+  } ,[detailData?.collectionName])
 
-  return (
-    <Layout>
-      <DetailLayout>
-        <PageTitle title={"Item Detail"} />
-        <DetailContent>
-          <ItemHistory img={detailData?.img}/>
-          <InfoList
-            title={detailData?.title}
-            artisitName={detailData?.collectionName}
-            price={detailData?.price}
-            about={detailData?.content}
-            mintAdress={detailData?.mintAddress}
-            owner={detailData?.owner}
-            tokenAdress={detailData?.id}
-          />
-        </DetailContent>
-          <Activities/>
-          <MoreCollection/>
-      </DetailLayout>
-    </Layout>
-  )
+  return isLoading ?
+      null : data ? (
+      <Layout>
+        <DetailLayout>
+          <PageTitle title={"Item Detail"} />
+          <DetailContent>
+            <ItemHistory img={detailData?.img}/>
+            <InfoList
+              title={detailData?.title}
+              artisitName={detailData?.collectionName}
+              price={detailData?.price}
+              about={detailData?.content}
+              mintAdress={detailData?.mintAddress}
+              owner={detailData?.owner}
+              tokenAdress={detailData?.id}
+            />
+          </DetailContent>
+            <Activities/>
+            <MoreCollection/>
+        </DetailLayout>
+      </Layout>
+  ) : null
 }
 
 export default ItemDetail;

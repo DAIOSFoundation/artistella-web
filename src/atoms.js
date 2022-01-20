@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const exam = atom({
-    key: "exp",
-    default: []
+export const collectionName = atom({
+    key: "collectionName",
+    default: "",
 })

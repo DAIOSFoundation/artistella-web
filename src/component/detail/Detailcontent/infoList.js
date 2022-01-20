@@ -1,5 +1,11 @@
 import React,{useState} from 'react';
-import styled,{keyframes} from 'styled-components';
+import styled from 'styled-components';
+import artistYellow from '../../../images/itemDetail/icon-artist-yellow.svg'
+import priceTag from '../../../images/itemDetail/icon-price-tag.svg'
+import itemInfo from '../../../images/itemDetail/icon-item-info.svg';
+import downArrow from '../../../images/itemDetail/down_arrow.png';
+import upArrow from '../../../images/itemDetail/up_arrow.png';
+import reporticon from '../../../images/itemDetail/icon-report.svg';
 
 const Div=styled.div`
   width:50%;
@@ -113,48 +119,46 @@ const Icon=styled.img`
   margin-right:4px;
 `
 function InfoList({title,artisitName,price,about,mintAdress,owner,tokenAdress, }){
-  const [artArrow,setArtArrow]=useState('down')
-  const [detailArrow,setDetailArrow]=useState('down')
+  const [artArrow, setArtArrow] = useState(true);
+  const [detailArrow, setDetailArrow] = useState(true);
   function onArtArrow(){
-    artArrow=='down'?
-    setArtArrow('up'):setArtArrow('down')
+    setArtArrow(prev => !prev);
   }
   function onDetailArrow(){
-    detailArrow=='down'?
-    setDetailArrow('up'):setDetailArrow('down')
+    setDetailArrow(prev => !prev);
   }
   return(
     <Div>
       <NameDiv>
         <Name>{title}</Name>
-        <Artist><ArtistIcon src="images/itemDetail/icon-artist-yellow.svg" />{artisitName}</Artist>
+        <Artist><ArtistIcon src={artistYellow} />{artisitName}</Artist>
       </NameDiv>
       <WalletDiv>
         <WalletTitle>TOTAL LISTED COUNT</WalletTitle>
-        <PriceDiv><img src="images/itemDetail/icon-price-tag.svg" />{price} SOL</PriceDiv>
+        <PriceDiv><img src={priceTag} />{price} SOL</PriceDiv>
         <WalletButton>Connect Wallet</WalletButton>
       </WalletDiv>
-      <ListDiv> 
+      <ListDiv>
         {/* About Digital Art */}
         <List>
-          <Icon src="images/itemDetail/icon-item-info.svg"/>About Digital Art
-          {artArrow==='down'? 
-          <Down onClick={onArtArrow} src='images/itemDetail/down_arrow.png'/>:
-          <Up onClick={onArtArrow} src='images/itemDetail/up_arrow.png'/>
+          <Icon src={itemInfo}/>About Digital Art
+          {artArrow ?
+            <Down onClick={onArtArrow} src={downArrow } />:
+            <Up onClick={onArtArrow} src={upArrow } />
           }
         </List>
-        {artArrow === 'down' ? <Text>{about }</Text>:null}
+        {artArrow ? <Text>{about }</Text>:null}
       </ListDiv>
       <ListDiv>
         {/* Details */}
         <List>
-          <Icon src="images/itemDetail/icon-report.svg"/>Details
-          {detailArrow==='down'? 
-          <Down onClick={onDetailArrow} src='images/itemDetail/down_arrow.png'/>:
-          <Up onClick={onDetailArrow} src='images/itemDetail/up_arrow.png'/>
+          <Icon src={reporticon} />Details
+          {detailArrow ?
+          <Down onClick={onDetailArrow} src={downArrow }/>:
+          <Up onClick={onDetailArrow} src={upArrow }/>
           }
         </List>
-        {detailArrow === 'down' ? <Text>{`
+        {detailArrow ? <Text>{`
           Mint 주소 : ${mintAdress }
           Token 주소 : ${tokenAdress }
           소유자 : ${owner }
