@@ -66,14 +66,6 @@ function MoreCollection() {
   );
 }
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> ba531f4acd32f794869f88b73438748916553cb2
 
 
 

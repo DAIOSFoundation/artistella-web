@@ -52,16 +52,6 @@ export const artist = {
                   
                 `${BASE_URL}/rpc/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionName}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
                 .then((res) => res.json())},
-<<<<<<< HEAD
-    
-      
-      
-=======
-        moreCollection: ({ queryKey }) => {
-                const [_, collectionSymbol] = queryKey;
-                return fetch(
-                `${BASE_URL}/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionSymbol}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
-                .then((res) => res.json())},
->>>>>>> ba531f4acd32f794869f88b73438748916553cb2
+
 }
 

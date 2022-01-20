@@ -19,11 +19,7 @@ const SlideDiv=styled.div`
 function MoreSlide() {
     const value =  useRecoilValue(collectionName)
     const { isLoading, data: collectionData } = useQuery(["moreCollection", value], itemDetail.moreCollection);
-<<<<<<< HEAD
 
-=======
-    console.log(collectionData.results);
->>>>>>> ba531f4acd32f794869f88b73438748916553cb2
     const setting={
         dots:false,
         infinite: true,
