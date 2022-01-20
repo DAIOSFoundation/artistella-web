@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const GridImage=styled.img`
     width:100%;
+    height:230px;
     min-width: 100px;
-    height:220px;
     min-height: 100px;
     object-fit:cover;
 `
@@ -23,7 +23,6 @@ export const ImageHead_s=styled.p`
   text-overflow:ellipsis;
   overflow:hidden;
 `
-
 
 export const ImageSummary = styled.div`
     font-size:0.875rem;

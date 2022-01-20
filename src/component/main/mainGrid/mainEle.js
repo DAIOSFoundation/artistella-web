@@ -8,7 +8,6 @@ const EleDiv_m=styled(EleDiv)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   &:hover{
     cursor:pointer;
   }
@@ -17,7 +16,7 @@ const EleDiv_m=styled(EleDiv)`
 const ImageDate=styled.p`
   font-size:0.875rem;
   color:#aea9a5;
-`;
+`
 
 
 const GridImage=styled.img`

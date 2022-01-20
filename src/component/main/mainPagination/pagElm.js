@@ -17,13 +17,15 @@ const EleDiv_p=styled(EleDiv)`
 const PagContnet = styled(GridContent)`
   width: 80%;
   height : 100%;
-
-  *{
-    margin-top: 10px;
-  }
-  :last-child{
-    margin: 20px 0px;
-  }
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  // *{
+  //   margin-top: 10px;
+  // }
+  // :last-child{
+  //   margin: 20px 0px;
+  // }
 `
 
 export function PagElm({img,header,date}){
