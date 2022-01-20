@@ -28,6 +28,12 @@ export const itemDetail = {
                 return fetch(
                 `${BASE_URL}/rpc/getNFTByMintAddress/${mintAdress}`)
                 .then((res) => res.json())},
+                
+        moreCollection: ({ queryKey }) => {
+                  const [_, collectionSymbol] = queryKey;
+                  return fetch(
+                  `${BASE_URL}/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionSymbol}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
+                  .then((res) => res.json())},
 
 }
 
