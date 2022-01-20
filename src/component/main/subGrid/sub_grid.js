@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { SubElm } from './subElm'
 import {GridDiv} from '../mainGrid/main_grid';
-
+import { Popular } from '../../../api';
+import {useQuery} from 'react-query';
 
 const Grid=styled.div`
   width: 80%;
@@ -38,19 +39,21 @@ const TopDiv=styled.div`
 `
 
 function SubGrid(){
-  return(
+  const { isLoading, data } = useQuery("popular", Popular)
+  const PopularData = data?.collections
+  return(isLoading? null:(
     <GridDiv>
       <TopDiv>
-        <GridTitle>Lorem Ipsum</GridTitle>
+        <GridTitle>Popular Collections</GridTitle>
         <MoreButton onClick={MoreClick}>More</MoreButton>
       </TopDiv>
       <Grid>
-        { data.map((data) => 
-          <SubElm img={data.img} header={data.header} text={data.text} price={data.price} />
+        { PopularData?.map((data) => 
+          <SubElm img={data.image} header={data.name} text={data.description}/>
         )}
-        
       </Grid>
     </GridDiv>
+    )
   )
 }
 

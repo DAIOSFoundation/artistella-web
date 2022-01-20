@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 const TransDiv = styled.div`
   width: 100%;
-  height: 55vh; //수정
-  background-image:url(images/1.png);
+  height: 60vh;
   background: linear-gradient(to bottom, rgba(76, 71, 67, 0.18), rgba(31, 29, 27, 0.89)),url(${props=>props.Path});
+  background-color:#2b2640;
+  background-position:right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   margin-top:80px;
   display: flex;
   align-items: center;
@@ -31,6 +32,9 @@ const TransTitle = styled.div`
   letter-spacing: normal;
   color: white;
   white-space: nowrap;
+  width:60%;
+  text-overflow:ellipsis;
+  overflow:hidden;
 `
 
 const TransSum=styled.div`
@@ -41,6 +45,7 @@ const TransSum=styled.div`
   line-height: 1.5;
   letter-spacing: normal;
   color: white;
+  width:60%;
 `
 
 const ExpButton=styled.div`
@@ -66,15 +71,17 @@ const TextSpan=styled.span`
   letter-spacing: normal;
   color: white;
 `
+const A=styled.a`
+  text-decoration:none;
+`
 
-
-function TransImage({title, summary, path}) {
+function TransImage({title, summary, path,url}) {
   return (
     <TransDiv Path={path}>
       <TitleDiv>
         <TransTitle>{title}</TransTitle>
         <TransSum>{summary}</TransSum>
-        <ExpButton><TextSpan>Explore Collection</TextSpan></ExpButton>
+        <A href={url} target="_blank"><ExpButton><TextSpan>Explore Collection</TextSpan></ExpButton></A>
       </TitleDiv>
     </TransDiv>
   )

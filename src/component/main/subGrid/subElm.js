@@ -18,12 +18,12 @@ const EleDiv_s = styled(EleDiv)`
 
 const SubImgDiv = styled.div`
   width: 100%;
-  height: 80%;
-`;
+`
 
 const SubContentDiv = styled.div`
   width: 80%;
-  height : 20%;
+  height : 100px;
+  text-overflow:ellipsis;
   *{
     margin-top: 10px;
   }
@@ -32,7 +32,7 @@ const SubContentDiv = styled.div`
   }
 `
 
-export function SubElm({img,header,text,price}){
+export function SubElm({img,header,text}){
   return(
     <EleDiv_s onClick={onEle}>
       <SubImgDiv>
@@ -41,7 +41,7 @@ export function SubElm({img,header,text,price}){
       <SubContentDiv>
         <ImageHead_s>{header}</ImageHead_s>
         <ImageSummary>{text}</ImageSummary>
-        <Price>{price}</Price>
+        {/* <Price>{price}</Price> */}
       </SubContentDiv>
     </EleDiv_s>
   )

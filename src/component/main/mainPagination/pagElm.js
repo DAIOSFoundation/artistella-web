@@ -2,16 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { GridImage, ImageHead, ImageSummary , onEle, EleDiv, GridImgDiv, GridContent} from "../Maincompo"
 
-
-
-
 const EleDiv_p=styled(EleDiv)`
   background-color: white;
   width: 90%;
+  height:320px;
   align-items: center;
   display: flex;
   flex-direction: column;
-
   &:hover{
     cursor:pointer;
   }
@@ -29,7 +26,7 @@ const PagContnet = styled(GridContent)`
   }
 `
 
-export function PagElm({img,header,text}){
+export function PagElm({img,header,date}){
     return(
       <EleDiv_p onClick={onEle}>
         <GridImgDiv>
@@ -37,7 +34,7 @@ export function PagElm({img,header,text}){
         </GridImgDiv>
         <PagContnet>
           <ImageHead>{header}</ImageHead>
-          <ImageSummary>{text}</ImageSummary>
+          <ImageSummary>{date}</ImageSummary>
         </PagContnet>
       </EleDiv_p>
     )

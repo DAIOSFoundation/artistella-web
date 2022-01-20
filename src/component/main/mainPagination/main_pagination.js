@@ -4,6 +4,8 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { PagElm } from './pagElm';
+import { Upcoming } from '../../../api';
+import { useQuery } from 'react-query'
 
 const PagDiv = styled.div`
   width: 100%;
@@ -45,6 +47,8 @@ const PageSlider = styled(Slider)`
 
 
 function MainPagination(){
+  const { isLoading, data } = useQuery("upcoming", Upcoming)
+  const UpcomingData = data
   const setting={
     dots:true,
     infinite: true,
@@ -53,17 +57,18 @@ function MainPagination(){
     slidesToScroll:4,
     arrows:false
   };
-  return(
+  return(isLoading?null:(
     <PagRayout>
           <PageTitleDiv>
-            <PagTitle>Lorem Ipsum</PagTitle>
+            <PagTitle>Upcoming Launches</PagTitle>
           </PageTitleDiv>
           <PageSlider {...setting}>
-              {data.map((data) => 
-                <PagElm img={data.img} header={data.header} text={data.text} />
+              {UpcomingData?.map((data) => 
+                <PagElm img={data.image} header={data.title} date={data.launchDate} />
               )}
           </PageSlider>
     </PagRayout>
+  )
   )
 }
 
