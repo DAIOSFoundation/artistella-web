@@ -41,6 +41,7 @@ const TopDiv=styled.div`
 function SubGrid(){
   const { isLoading, data } = useQuery(["main","popular"], main.Popular)
   const PopularData = data?.collections
+  console.log(PopularData);
   return(isLoading? null:(
     <GridDiv>
       <TopDiv>
