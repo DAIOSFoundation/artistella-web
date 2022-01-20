@@ -1,6 +1,8 @@
 import React,{useState}from 'react';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import priceChart from '../../../images/itemDetail/icon-price-chart.svg'
+import downArrow from '../../../images/itemDetail/down_arrow.png';
+import upArrow from '../../../images/itemDetail/up_arrow.png';
 
 const Div=styled.div`
   width:50%;
@@ -60,23 +62,21 @@ const GraphIcon=styled.img`
 `
 
 function ItemHistory({img}) {
-  const [arrow, setArrow] = useState('down');
+  const [arrow, setArrow] = useState(true);
   function onArrow(){
-    arrow=='down'?
-    setArrow('up'):setArrow('down')
+    setArrow(prev => !prev)
   }
-  console.log(img);
   return(
     <Div>
       <Art src={img}/>
       <History>
-        <GraphIcon src="images/itemDetail/icon-price-chart.svg"/>Price History
-        {arrow==='down'? //그래프가 내려와있음
-        <Down onClick={onArrow} src='images/itemDetail/down_arrow.png'/>:
-        <Up onClick={onArrow} src='images/itemDetail/up_arrow.png'/>
+        <GraphIcon src={priceChart}/>Price History
+        {arrow ? //그래프가 내려와있음
+        <Down onClick={onArrow} src= {downArrow} />:
+        <Up onClick={onArrow} src= {upArrow} />
         }
       </History>
-      {arrow==='down'?<Graph>그래프 표시</Graph>:null}
+      {arrow ? <Graph>그래프 표시</Graph>:null}
     </Div>
   )
 }

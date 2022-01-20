@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 import React from "react"
 import { EleDiv, GridContent, GridImage, GridImgDiv, ImageHead_s, ImageSummary, onEle, Price } from "../Maincompo"
 
@@ -32,9 +33,10 @@ const SubContentDiv = styled.div`
   }
 `
 
-export function SubElm({img,header,text}){
+export function SubElm({img,header,text,collectionName}){
   return(
-    <EleDiv_s onClick={onEle}>
+    <Link to={`/artist/${collectionName}`} style={{textDecoration:'none'}}>
+    <EleDiv_s>
       <SubImgDiv>
         <GridImage src={img}></GridImage>
       </SubImgDiv>
@@ -44,5 +46,6 @@ export function SubElm({img,header,text}){
         {/* <Price>{price}</Price> */}
       </SubContentDiv>
     </EleDiv_s>
+    </Link>
   )
 }

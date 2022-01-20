@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://api-mainnet.magiceden.io/rpc";
+const BASE_URL = "https://api-mainnet.magiceden.io";
 
 
 export const main = {
@@ -12,20 +12,42 @@ export const main = {
         Popular: () =>
                 fetch('https://api-mainnet.magiceden.io/popular_collections').then((res) => res.json())
         ,
+        
 
 }
 
 export const itemList = {
-        Skull: () => fetch(`${BASE_URL}/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"skeleton_crew_skulls"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
+        Skull: () => fetch(`${BASE_URL}/rpc/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"skeleton_crew_skulls"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
         .then((res) => res.json()),
-
+      
 }
 
 export const itemDetail = {
         mint: ({ queryKey }) => {
                 const [_, mintAdress ] = queryKey;
                 return fetch(
-                `${BASE_URL}/getNFTByMintAddress/${mintAdress}`)
+                `${BASE_URL}/rpc/getNFTByMintAddress/${mintAdress}`)
                 .then((res) => res.json())},
+
+}
+
+export const artist = {
+      colName: ({ queryKey }) => {
+              const [_, col ] = queryKey;
+              console.log(col)
+              return fetch(
+              `${BASE_URL}/collections/${col}`)
+              .then((res) => res.json())},
+      
+      collections: ({ queryKey }) => {
+                const [_, collectionName ] = queryKey;
+                console.log(collectionName)
+                return fetch(
+                  
+                `${BASE_URL}/rpc/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionName}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
+                .then((res) => res.json())},
+    
+      
+      
 }
 

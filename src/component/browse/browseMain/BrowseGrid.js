@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import {useParams} from 'react-router-dom';
-import { itemList} from '../../../api';
+import { itemList, artist} from '../../../api';
 import { SubElmB } from '../Ele/browseEle';
 
 const GridDiv=styled.div`
@@ -19,15 +19,15 @@ const Grid=styled.div`
 `
 
 function BrowseGrid({ shape }) {
- 
-  const { isLoading, data } = useQuery("skull", itemList.Skull);
-  const skdata = data?.results;
-  console.log(skdata);
+  const { collectionName: name } = useParams();
+  const { isLoading, data:coldata } = useQuery(["artist_list", name], artist.collections);
+  const collectionData = coldata?.results;
+  
   return isLoading ?  null :   (
     <GridDiv>
       <Grid Shape={shape}>
-        {skdata ? (
-          skdata.map((data) =>
+        {collectionData ? (
+          collectionData.map((data) =>
             <SubElmB key={data.mintAddress} link={data.mintAddress} img={data.img} header={data.title} text={data.content} price={`${data.price} SOL`} />
           )) : null
         }

@@ -49,7 +49,7 @@ function SubGrid(){
       </TopDiv>
       <Grid>
         { PopularData?.map((data) => 
-          <SubElm img={data.image} header={data.name} text={data.description}/>
+          <SubElm img={data.image} header={data.name} text={data.description} collectionName={data.symbol}/>
         )}
       </Grid>
     </GridDiv>

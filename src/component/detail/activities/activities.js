@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
 import TablePag from './pagination';
+import downArrow from '../../../images/itemDetail/down_arrow.png';
+import upArrow from '../../../images/itemDetail/up_arrow.png';
+import activity from '../../../images/itemDetail/icon-activity-01.svg';
 
 const Div=styled.div`
   width:100%;
@@ -44,21 +47,20 @@ const Down=styled.img`
 `
 
 function Activities() {
-  const [arrow,setArrow]=useState('down')
+  const [arrow, setArrow] = useState(true);
   function onArrow(){
-    arrow=='down'?
-    setArrow('up'):setArrow('down')
+    setArrow(prev=> !prev)
   }
   return (
     <Div>
       <ActivDiv>
-        <Icon src="images/itemDetail/icon-activity-01.svg"/>Activities
-        {arrow==='down'? //그래프가 내려와있음
-        <Down onClick={onArrow} src='images/itemDetail/down_arrow.png'/>:
-        <Up onClick={onArrow} src='images/itemDetail/up_arrow.png'/>
+        <Icon src={activity} />Activities
+        {arrow ? //그래프가 내려와있음
+        <Down onClick={onArrow} src={downArrow} />:
+        <Up onClick={onArrow} src={upArrow} />
         }
       </ActivDiv>
-      {arrow==='down'?<TablePag></TablePag>:null}
+      {arrow ? <TablePag></TablePag> : null}
     </Div>
   );
 }

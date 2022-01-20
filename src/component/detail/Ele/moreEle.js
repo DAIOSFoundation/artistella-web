@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from "styled-components"
 import { EleDiv, GridImage, ImageHead_s, ImageSummary, onEle, Price } from "../../main/Maincompo"
 
@@ -34,9 +35,11 @@ const MoreContDiv = styled.div`
   }
 `
 
-export function SubElmP({img,header,text,price}){
-  return(
-    <EleDiv_More onClick={onEle}>
+export function SubElmP({ link,img, header, text, price }) {
+  
+  return (
+    <Link to={`/itemdetail/${link}`} >
+    <EleDiv_More>
       <MoreImgDiv>
         <GridImage src={img}></GridImage>
       </MoreImgDiv>
@@ -46,5 +49,6 @@ export function SubElmP({img,header,text,price}){
         <Price>{price}</Price>
       </MoreContDiv>
     </EleDiv_More>
+    </Link>
   )
 }

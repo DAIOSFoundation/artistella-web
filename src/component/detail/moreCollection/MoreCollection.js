@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import Slider from 'react-slick'
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
-import { SubElmP } from '../Ele/moreEle';
+import moreCollection from "../../../images/itemDetail/icon-more-collection.svg"
+import downArrow from '../../../images/itemDetail/down_arrow.png';
+import upArrow from '../../../images/itemDetail/up_arrow.png';
+import MoreSlide from './MoreSlide';
 
 const Div=styled.div`
   width:100%;
@@ -44,136 +46,25 @@ const Down=styled.img`
     cursor: pointer;
   }
 `
-const SlideDiv=styled.div`
-  background-color:#faf8f4;
-  margin-top:4px;
-  border-radius:8px;
-  padding: 30px 0px;
-`
+
 function MoreCollection() {
-  const [arrow,setArrow]=useState('down')
+  const [arrow,setArrow]=useState(true)
   function onArrow(){
-    arrow=='down'?
-    setArrow('up'):setArrow('down')
+    setArrow(prev => !prev);
   }
   return (
     <Div>
       <MoreDiv>
-        <Icon src="images/itemDetail/icon-more-collection.svg"/>More from this collection
-        {arrow==='down'? //그래프가 내려와있음
-        <Down onClick={onArrow} src='images/itemDetail/down_arrow.png'/>:
-        <Up onClick={onArrow} src='images/itemDetail/up_arrow.png'/>
+        <Icon src={moreCollection} />More from this collection
+        {arrow ? //그래프가 내려와있음
+          <Down onClick={onArrow} src={downArrow } />:
+        <Up onClick={onArrow} src={upArrow} />
         }
       </MoreDiv>
-      {arrow==='down'?<MoreSlide/>:null}
+      {arrow ?<MoreSlide/>:null}
     </Div>
   );
 }
-
-function MoreSlide(){
-  const setting={
-    dots:false,
-    infinite: true,
-    speed: 500,
-    slidesToShow:4,
-    slidesToScroll:4,
-    arrows:true
-  };
-  return(
-    <SlideDiv>
-      <Slider {...setting}>
-          
-        {data.map( (data) => 
-        <SubElmP img={data.img} header={data.header} text={data.text} price={data.price} />
-        )}
-      </Slider>
-    </SlideDiv>
-  )
-} 
-
-
-const data = [
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-
-]
-
 
 
 

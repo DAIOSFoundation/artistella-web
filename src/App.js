@@ -29,7 +29,7 @@ function App() {
               <Route exact path='/itemlist'>
                   <ItemList />
               </Route>
-              <Route exact path='/artist'>
+              <Route exact path='/artist/:collectionName'>
                   <Artist />
               </Route>
               <Route path='/itemDetail/:mintAdress'>

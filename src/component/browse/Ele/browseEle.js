@@ -29,7 +29,7 @@ const  BroContentDiv = styled.div`
 
 export function SubElmB({ img, header, text, price,link }) {
   return (
-      <Link to={`/itemdetail/${link}`}>
+      <Link to={`/itemdetail/${link}`} style={{textDecoration:'none'}}>
         <EleDiv_b>
           <BroImgDiv>
             <GridImage src={img}></GridImage>

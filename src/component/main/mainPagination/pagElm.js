@@ -20,12 +20,6 @@ const PagContnet = styled(GridContent)`
   display:flex;
   justify-content:center;
   flex-direction:column;
-  // *{
-  //   margin-top: 10px;
-  // }
-  // :last-child{
-  //   margin: 20px 0px;
-  // }
 `
 
 export function PagElm({img,header,date}){

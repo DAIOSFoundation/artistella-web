@@ -37,7 +37,7 @@ const Name=styled.h1`
   margin-bottom:30px;
 `
 const Content=styled.p`
-  width: 30%;
+  width: 50%;
   font-size:0.9em;
   line-height:1.71;
   color:#737170;
@@ -50,20 +50,20 @@ const ArtistGrid=styled.div`
   margin-bottom:20px;
 `
 
-function ArtistBrowse(){
+function ArtistBrowse({profile,name,content}){
   return(
     <Div>
       <PhotoDiv>
-        <Photo src='images/itemList/profile.png'/>
+        <Photo src={profile}/>
       </PhotoDiv>
-      <Name>Artist Name Here</Name>
+      <Name>{name}</Name>
       <ArtistGrid>
           <InfoNumber info='FLOOR PRICE' number='0.25 SOL'/>
           <InfoNumber info='TOTAL VOLUME' number='387.57 SOL'/>
           <InfoNumber info='AVG SALE PRICE' number='0.50 SOL'/>
           <InfoNumber info='TOTAL LISTED COUNT' number='335'/>
       </ArtistGrid>
-      <Content>The Baby Ape Social Club is a limited collection of 5,000 “Baby Apes” that reside on Dab Island in the heart of the Bermuda Triangle. Inspired by our fellow Bored Apes on the Ethereum chain, we are here to bring the Baby Ape Social Club to the Solana ecosystem.</Content>
+      <Content>{content}</Content>
     </Div>
   )
 }
