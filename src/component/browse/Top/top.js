@@ -1,5 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
+import iconItemPressed from "../../../images/itemList/icon-item-pressed.png"
+import iconItemPressed2x from "../../../images/itemList/icon-item-pressed@2x.png";
+import iconItemPressed3x from "../../../images/itemList/icon-item-pressed@3x.png";
+import iconActivityNormal from "../../../images/itemList/icon-activity-normal.png"
+import iconActivityNormal2x from "../../../images/itemList/icon-activity-normal@2x.png"
+import iconActivityNormal3x from "../../../images/itemList/icon-activity-normal@3x.png"
+
 
 const TopDiv = styled.div`
   width:100%;
@@ -45,11 +52,15 @@ const ItemIcon=styled.img`
   line-height:29px;
   vertical-align:middle;
   margin:0 1px 2px 1px;
+  width:20px;
+  height:20px;
 `
 const ActivityIcon=styled.img`
   line-height:29px;
   vertical-align:middle;
   margin:0 1px 2px 1px;
+  width:20px;
+  height:20px;
 `
 const Margin=styled.span`
   display:inline-block;
@@ -62,12 +73,12 @@ function Top(){
       <Title>Explore Items</Title>
       <Buttons>
           <ActLine>
-            <ItemIcon src="images/itemList/icon-item-pressed.png" srcSet="images/itemList/icon-item-pressed@2x.png 2x,images/itemList/icon-item-pressed@3x.png 3x"/>
+            <ItemIcon src={iconItemPressed} srcSet={iconItemPressed2x,iconItemPressed3x}/>
             <span>Items</span>
           </ActLine>
           <Margin></Margin>
           <span>
-            <ActivityIcon src="images/itemList/icon-activity-normal.png" srcSet="images/itemList/icon-activity-normal@2x.png 2x, images/itemList/icon-activity-normal@3x.png 3x"/>
+            <ActivityIcon src={iconActivityNormal} srcSet={iconActivityNormal2x,iconActivityNormal3x}/>
             <span style={{color:'#dfd9ce'}}>Activity</span> 
           </span>
           {/*활성상태 아이콘컬러 */}
@@ -81,12 +92,12 @@ export function AritistTop(){
     <ArtTopDiv>
       <ArtButtons>
           <ActLine>
-            <ItemIcon src="images/itemList/icon-item-pressed.png" srcSet="images/itemList/icon-item-pressed@2x.png 2x,images/itemList/icon-item-pressed@3x.png 3x"/>
+            <ItemIcon src={iconItemPressed} srcSet={iconItemPressed2x,iconItemPressed3x}/>
             <span>Items</span>
           </ActLine>
           <Margin></Margin>
           <span>
-            <ActivityIcon src="images/itemList/icon-activity-normal.png" srcSet="images/itemList/icon-activity-normal@2x.png 2x, images/itemList/icon-activity-normal@3x.png 3x"/>
+            <ActivityIcon src={iconActivityNormal} srcSet={iconActivityNormal2x,iconActivityNormal3x}/>
             <span style={{color:'#dfd9ce'}}>Activity</span> 
           </span>
           {/*활성상태 아이콘컬러 */}

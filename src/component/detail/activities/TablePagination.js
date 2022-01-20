@@ -1,7 +1,8 @@
 //https://www.codesmartly.codes/react/javascript/how-to-implement-table-pagination-react-table-v7/
 import React from "react";
 import styled from 'styled-components';
-import lefticon from "../../../images/itemDetail/icon-pagination-left.svg";
+import leftarrow from "../../../images/itemDetail/icon-pagination-left.svg";
+import rightarrow from "../../../images/itemDetail/icon-pagination-right.svg";
 
 const Styles = styled.div`
   .navigationButtonsContainer{
@@ -33,7 +34,7 @@ const RightArrow=styled.div`
   background-color:white;
   width:30px;
   height:30px;
-  content:url(images/itemDetail/icon-pagination-right.svg);
+  content:url(${rightarrow});
   border:solid 1px #dfd9ce;
   border-radius: 8px; 
   color: #9c7e6a;
@@ -46,7 +47,7 @@ const LeftArrow=styled.div`
   background-color:white;
   width:30px;
   height:30px;
-  content:url();
+  content:url(${leftarrow});
   border:solid 1px #dfd9ce;
   border-radius: 8px;
   color: #9c7e6a;
@@ -73,7 +74,6 @@ const TablePagination = (props) => {
                     onClick={props.previousPage}
                     disabled={!props.canPreviousPage}
           >
-            <Img scr={lefticon} />
                 </LeftArrow>
                 <ul style={{ display: "flex" }}>
                     {

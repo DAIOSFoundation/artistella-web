@@ -32,7 +32,7 @@ export const itemDetail = {
         moreCollection: ({ queryKey }) => {
                   const [_, collectionSymbol] = queryKey;
                   return fetch(
-                  `${BASE_URL}/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionSymbol}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
+                  `${BASE_URL}/rpc/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"${collectionSymbol}"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
                   .then((res) => res.json())},
 
 }

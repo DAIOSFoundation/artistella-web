@@ -158,11 +158,11 @@ function InfoList({title,artisitName,price,about,mintAdress,owner,tokenAdress, }
           <Up onClick={onDetailArrow} src={upArrow }/>
           }
         </List>
-        {detailArrow ? <Text>{`
-          Mint 주소 : ${mintAdress }
-          Token 주소 : ${tokenAdress }
-          소유자 : ${owner }
-          `}</Text> : null}
+        {detailArrow ? <Text>
+          {`Mint Address : ${mintAdress}`}<br/>
+          {`Token Address : ${tokenAdress}`}<br/>
+          {`Owner : ${owner}`}
+          </Text> : null}
       </ListDiv>
     </Div>
   )

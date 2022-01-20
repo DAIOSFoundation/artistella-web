@@ -38,7 +38,7 @@ const MoreContDiv = styled.div`
 export function SubElmP({ link,img, header, text, price }) {
   
   return (
-    <Link to={`/itemdetail/${link}`} >
+    <Link to={`/itemdetail/${link}`} style={{textDecoration:'none'}}>
     <EleDiv_More>
       <MoreImgDiv>
         <GridImage src={img}></GridImage>
@@ -46,7 +46,7 @@ export function SubElmP({ link,img, header, text, price }) {
       <MoreContDiv>
         <ImageHead_s>{header}</ImageHead_s>
         <ImageSummary>{text}</ImageSummary>
-        <Price>{price}</Price>
+        <Price>{price} SOL</Price>
       </MoreContDiv>
     </EleDiv_More>
     </Link>

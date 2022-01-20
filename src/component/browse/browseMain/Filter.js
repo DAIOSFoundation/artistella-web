@@ -1,5 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import SolanaIcon from '../../../images/itemList/icon-solana.png'
+import SolanaIcon2x from '../../../images/itemList/icon-solana@2x.png'
+import SolanaIcon3x from '../../../images/itemList/icon-solana@3x.png'
+import IconDownWhite from '../../../images/itemList/icon-down-white.png';
+import IconDownWhite2x from '../../../images/itemList/icon-down-white@2x.png';
+import IconDownWhite3x from '../../../images/itemList/icon-down-white@3x.png';
 
 const FilterDiv = styled.div`
   width:20vw;
@@ -84,9 +90,9 @@ function Filter(){
     <FilterDiv>
       <Title>Price Filter</Title>
       <Select>
-        <SelectLogo src="images/itemList/icon-solana.png" srcSet="images/itemList/icon-solana@2x.png 2x,images/itemList/icon-solana@3x.png 3x"/>
+        <SelectLogo src={SolanaIcon} srcSet={SolanaIcon2x,SolanaIcon3x}/>
         <SelectName>SOL</SelectName>
-        <SelectArrow src="images/itemList/icon-down-white.png" srcSet="images/itemList/icon-down-white@2x.png 2x,images/itemList/icon-down-white@3x.png 3x"/>
+        <SelectArrow src={IconDownWhite} srcSet={IconDownWhite2x,IconDownWhite3x}/>
       </Select>
       <MinMax placeholder='Min'></MinMax>
       <To>to</To>

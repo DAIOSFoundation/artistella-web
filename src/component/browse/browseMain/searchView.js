@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BrowseGrid from './BrowseGrid';
+import BoxViewPrssed from '../../../images/itemList/icon-boxview-pressed.png';
+import BoxViewPrssed2x from '../../../images/itemList/icon-boxview-pressed@2x.png';
+import BoxViewPrssed3x from '../../../images/itemList/icon-boxview-pressed@3x.png';
+import BoxViewNormal from '../../../images/itemList/icon-boxview-normal.png';
+import BoxViewNormal2x from '../../../images/itemList/icon-boxview-normal@2x.png';
+import BoxViewNormal3x from '../../../images/itemList/icon-boxview-normal@3x.png';
+import TileViewNormal from '../../../images/itemList/icon-tileview-normal.png';
+import TileViewNormal2x from '../../../images/itemList/icon-tileview-normal@2x.png';
+import TileViewNormal3x from '../../../images/itemList/icon-tileview-normal@3x.png';
+import TileViewPressed from '../../../images/itemList/icon-tileview-pressed.png';
+import TileViewPressed2x from '../../../images/itemList/icon-tileview-pressed@2x.png';
+import TileViewPressed3x from '../../../images/itemList/icon-tileview-pressed@3x.png';
+import IconDownBlack from '../../../images/itemList/icon-down-black.png';
+import IconDownBlack2x from '../../../images/itemList/icon-down-black@2x.png';
+import IconDownBlack3x from '../../../images/itemList/icon-down-black@3x.png';
+import SearchIcon from '../../../images/itemList/icon-search-copy.png';
+import SearchIcon2x from '../../../images/itemList/icon-search-copy@2x.png';
+import SearchIcon3x from '../../../images/itemList/icon-search-copy@3x.png';
+
+
 
 const SearchRayout=styled.div`
   width:100%;
@@ -51,7 +71,7 @@ const Search =  styled.input`
   const Button =styled.button`
     background-color: white;
     border: none;
-
+    
     &:hover{
       cursor: pointer;
     }
@@ -77,6 +97,8 @@ const ListIcon=styled.img`
   position:absolute;
   right:12px;
   top:16px;
+  width:12px;
+  height:12px;
 `
 const Recently=styled.span`
   font-size:1em;
@@ -101,7 +123,8 @@ const BoxIcon=styled.img`
   height: 24px;
   object-fit: contain;
   margin:0 5px;
-
+  width:24px;
+  height:24px;
   &:hover{
     cursor: pointer;
   }
@@ -120,20 +143,20 @@ function SearchView(){
         <SearchDiv>
             <Divbar>
               <Search placeholder='Search Items'/>
-              <Button><img src="images/itemList/icon-search-copy.png" srcSet="images/itemList/icon-search-copy@2x.png 2x, images/itemList/icon-search-copy@3x.png 3x"/></Button>
+              <Button><img style={{width:'20px'}} src={SearchIcon} srcSet={SearchIcon2x,SearchIcon3x}/></Button>
             </Divbar> 
             <Idiv>
               <ListDiv>
                 <Recently>Recently Listed</Recently>
-                <ListIcon src="images/itemList/icon-down-black.png" srcSet="images/itemList/icon-down-black@2x.png 2x,images/itemList/icon-down-black@3x.png 3x"/>
+                <ListIcon src={IconDownBlack} srcSet={IconDownBlack2x,IconDownBlack3x}/>
               </ListDiv>
               <BoxView>
                   {grid === 3 ?
-                  <BoxIcon src="images/itemList/icon-boxview-pressed.png" srcSet="images/itemList/icon-boxview-pressed@2x.png 2x,images/itemList/icon-boxview-pressed@3x.png 3x"></BoxIcon>:
-                  <BoxIcon onClick={onGridShape} src="images/itemList/icon-boxview-normal.png" srcSet="images/itemList/icon-boxview-normal@2x.png 2x,images/itemList/icon-boxview-normal@3x.png 3x"></BoxIcon>}
+                  <BoxIcon src={BoxViewPrssed} srcSet={BoxViewPrssed2x,BoxViewPrssed3x}></BoxIcon>:
+                  <BoxIcon onClick={onGridShape} src={BoxViewNormal} srcSet={BoxViewNormal2x.anchor,BoxViewNormal3x}></BoxIcon>}
                   {grid === 4 ?
-                  <BoxIcon src="images/itemList/icon-tileview-pressed.png" srcSet="images/itemList/icon-tileview-pressed@2x.png 2x,images/itemList/icon-tileview-pressed@3x.png 3x"></BoxIcon>:
-                  <BoxIcon onClick={onGridShape} src="images/itemList/icon-tileview-normal.png" srcSet="images/itemList/icon-tileview-normal@2x.png 2x,images/itemList/icon-tileview-normal@3x.png 3x"></BoxIcon>}
+                  <BoxIcon src={TileViewPressed} srcSet={TileViewPressed2x,TileViewPressed3x}></BoxIcon>:
+                  <BoxIcon onClick={onGridShape} src={TileViewNormal} srcSet={TileViewNormal2x,TileViewNormal3x}></BoxIcon>}
               </BoxView>
             </Idiv>
         </SearchDiv>

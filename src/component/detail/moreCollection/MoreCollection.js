@@ -67,6 +67,4 @@ function MoreCollection() {
 }
 
 
-
-
 export default MoreCollection;
