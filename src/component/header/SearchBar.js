@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import search from  '../../images/icon-search.png'
+import search2x from  '../../images/icon-search@2x.png'
+import search3x from  '../../images/icon-search@3x.png'
 
 const Searchbar = styled.input`
   border : none;
@@ -50,7 +53,7 @@ function Searchs() {
   return(
     <SearchDiv>
       <SearchBardiv>
-        <SearchButton as="button"  onClick={BrowseClick}> <img src="images/icon-search.png" srcSet="images/icon-search@2x.png 2x, images/icon-search@3x.png 3x"/></SearchButton>
+        <SearchButton as="button" onClick={BrowseClick}> <img src={search} srcSet={{search2x,search3x} }/></SearchButton>
         <Searchbar type={'text'} placeholder='Search Collections' />
       </SearchBardiv>
     </SearchDiv>

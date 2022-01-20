@@ -35,27 +35,62 @@ const GridTitle = styled.div`
   }
 `
 function MainGrid() {
-  const { isLoading, data } = useQuery("skull", Skull)
-  const monekyData = data?.results;
-  console.log(monekyData);
 
-  return isLoading ? null : ( data ?
+  return(
     <GridDiv>
       <GridTitle>
         <h1>Lorem Ipsum</h1>
       </GridTitle>
       <Grid>
         {
-          monekyData?.map( res =>
-            <GridElm img={res.img} header={res.title} text={res.content} date={res.createdAt} />
+          data.map( res =>
+            <GridElm img={res.img} header={res.header} text={res.text} date={res.date} />
           )
         }
       </Grid>
-    </GridDiv> : null
+    </GridDiv>
   )
 }
 
+const data =[
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
+    {
+      img : "images/grid.png",
+      header : "Lorem Ipsum",
+      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
+      date : "12/24/21"
+    },
 
+]
 
 
 export default MainGrid;

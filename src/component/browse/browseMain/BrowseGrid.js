@@ -1,5 +1,8 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 import styled from 'styled-components';
+import {useParams} from 'react-router-dom';
+import { itemList} from '../../../api';
 import { SubElmB } from '../Ele/browseEle';
 
 const GridDiv=styled.div`
@@ -15,93 +18,23 @@ const Grid=styled.div`
   grid-gap: 27px; 
 `
 
-function BrowseGrid({shape}){
-  return(
-  <GridDiv>
-    <Grid Shape={shape}>
-    {
-        data.map( (data)=>
-          <SubElmB img={data.img} header={data.header} text={data.text} price={data.price} />
-
-        )
-      }
-    </Grid>
-  </GridDiv>
-  )
+function BrowseGrid({ shape }) {
+ 
+  const { isLoading, data } = useQuery("skull", itemList.Skull);
+  const skdata = data?.results;
+  console.log(skdata);
+  return isLoading ?  null :   (
+    <GridDiv>
+      <Grid Shape={shape}>
+        {skdata ? (
+          skdata.map((data) =>
+            <SubElmB key={data.mintAddress} link={data.mintAddress} img={data.img} header={data.title} text={data.content} price={`${data.price} SOL`} />
+          )) : null
+        }
+      </Grid>
+    </GridDiv>
+  ) 
 }
 
-const data = [
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-];
+
 export default BrowseGrid;

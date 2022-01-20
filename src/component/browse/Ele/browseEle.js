@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { EleDiv, GridImage, ImageHead_s, ImageSummary, onEle, Price } from "../../main/Maincompo"
+import { EleDiv, GridImage, ImageHead_s, ImageSummary, onDetail, onEle, Price } from "../../main/Maincompo"
 
 
 const EleDiv_b=styled(EleDiv)`
@@ -26,17 +27,19 @@ const  BroContentDiv = styled.div`
 `
 
 
-export function SubElmB({img,header,text,price}){
-    return(
-      <EleDiv_b onClick={onEle}>
-        <BroImgDiv>
-          <GridImage src={img}></GridImage>
-        </BroImgDiv>
-        <BroContentDiv>
-          <ImageHead_s>{header}</ImageHead_s>
-          <ImageSummary>{text}</ImageSummary>
-          <Price>{price}</Price>
-        </BroContentDiv>
-      </EleDiv_b>
+export function SubElmB({ img, header, text, price,link }) {
+  return (
+      <Link to={`/itemdetail/${link}`}>
+        <EleDiv_b>
+          <BroImgDiv>
+            <GridImage src={img}></GridImage>
+          </BroImgDiv>
+          <BroContentDiv>
+            <ImageHead_s>{header}</ImageHead_s>
+            <ImageSummary>{text}</ImageSummary>
+            <Price>{price}</Price>
+          </BroContentDiv>
+        </EleDiv_b>
+      </Link>
     )
   }

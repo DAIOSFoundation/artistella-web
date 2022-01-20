@@ -1,4 +1,5 @@
 import React,{useState}from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Div=styled.div`
@@ -58,15 +59,16 @@ const GraphIcon=styled.img`
   margin-right:4px;
 `
 
-function ItemHistory(){
-  const [arrow,setArrow]=useState('down')
+function ItemHistory({img}) {
+  const [arrow, setArrow] = useState('down');
   function onArrow(){
     arrow=='down'?
     setArrow('up'):setArrow('down')
   }
+  console.log(img);
   return(
     <Div>
-      <Art src='images/grid.png'/>
+      <Art src={img}/>
       <History>
         <GraphIcon src="images/itemDetail/icon-price-chart.svg"/>Price History
         {arrow==='down'? //그래프가 내려와있음

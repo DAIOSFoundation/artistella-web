@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import { useWallet } from './useWallet';
 import { SetUpModal } from './SetUpModal';
+import wallet from '../../images/icon-wallet.png'
+import wallet2x from '../../images/icon-wallet@2x.png'
+import wallet3x from '../../images/icon-wallet@3x.png'
 
 const WalletD=styled.div`
     width: 90%;
@@ -99,7 +102,7 @@ function Wallet(){
                 <WalletD>
                     <Walletdiv onClick={openModal}>
                         <Icon_wallet>
-                            <ImgWallet src="images/icon-wallet.png" srcSet="images/icon-wallet@2x.png 2x, images/icon-wallet@3x.png 3x"/>
+                                <ImgWallet src={wallet} srcSet={{wallet2x,wallet3x}}/>
                         </Icon_wallet>
                         <ConnectDiv>
                             <span>Connect Wallet</span>

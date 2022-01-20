@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import MenuIn from './MenuIn';
 import Searchs from './SearchBar';
 import Wallet from './Wallet';
+import artisella from '../../images/artistella-logo.png';
+import artisella2x from '../../images/artistella-logo@2x.png';
+import artisella3x from '../../images/artistella-logo@3x.png';
+import idicon from '../../images/icon-id.png';
+import idicon2x from '../../images/icon-id@2x.png';
+import idicon3x from '../../images/icon-id@3x.png';
 
 const HeaderNav = styled.nav`
   margin: 0 auto;
@@ -86,7 +92,7 @@ function Banner(){
     return (
       <HeaderNav>
         <NavDiv>
-          <Logo onClick={LogoClick}><LogoImg src='images/artistella-logo.png' srcSet='images/artistella-logo@2x.png 2x, images/artistella-logo@3x.png 3x'/></Logo>
+          <Logo onClick={LogoClick}><LogoImg src={artisella} srcSet={{artisella2x,artisella3x} }/></Logo>
           <Menudiv>
             <Searchs />
             <TempDiv>
@@ -94,7 +100,7 @@ function Banner(){
             <MenuIn child="SELL"/>
             <MenuIn child="RAYDIUM"/>
             <MenuImgDiv>
-              <MenuImg src="images/icon-id.png" srcSet="images/icon-id@2x.png 2x,images/icon-id@3x.png 3x"/>
+                <MenuImg src={idicon} srcSet={{idicon2x,idicon3x}}/>
             </MenuImgDiv>
             <Wallet />
             </TempDiv>

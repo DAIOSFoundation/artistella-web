@@ -112,7 +112,7 @@ const Text=styled.span`
 const Icon=styled.img`
   margin-right:4px;
 `
-function InfoList(){
+function InfoList({title,artisitName,price,about,mintAdress,owner,tokenAdress, }){
   const [artArrow,setArtArrow]=useState('down')
   const [detailArrow,setDetailArrow]=useState('down')
   function onArtArrow(){
@@ -126,12 +126,12 @@ function InfoList(){
   return(
     <Div>
       <NameDiv>
-        <Name>NFT name here Lorem Ipsum #182397</Name>
-        <Artist><ArtistIcon src="images/itemDetail/icon-artist-yellow.svg"/>Artist name here</Artist>
+        <Name>{title}</Name>
+        <Artist><ArtistIcon src="images/itemDetail/icon-artist-yellow.svg" />{artisitName}</Artist>
       </NameDiv>
       <WalletDiv>
         <WalletTitle>TOTAL LISTED COUNT</WalletTitle>
-        <PriceDiv><img src="images/itemDetail/icon-price-tag.svg"/>0.0 SOL</PriceDiv>
+        <PriceDiv><img src="images/itemDetail/icon-price-tag.svg" />{price} SOL</PriceDiv>
         <WalletButton>Connect Wallet</WalletButton>
       </WalletDiv>
       <ListDiv> 
@@ -143,10 +143,7 @@ function InfoList(){
           <Up onClick={onArtArrow} src='images/itemDetail/up_arrow.png'/>
           }
         </List>
-          {artArrow==='down'?<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper egestas 
-          tincidunt. Suspendisse vitae vehicula justo, eget suscipit augue.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus semper egestas tincidunt. Suspendisse vitae vehicula justo, eget suscipit augue.Lorem ipsum dolor sit amet, 
-          consectetur adipiscing</Text>:null}
+        {artArrow === 'down' ? <Text>{about }</Text>:null}
       </ListDiv>
       <ListDiv>
         {/* Details */}
@@ -157,10 +154,11 @@ function InfoList(){
           <Up onClick={onDetailArrow} src='images/itemDetail/up_arrow.png'/>
           }
         </List>
-          {detailArrow==='down'?<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper egestas 
-          tincidunt. Suspendisse vitae vehicula justo, eget suscipit augue.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus semper egestas tincidunt. Suspendisse vitae vehicula justo, eget suscipit augue.Lorem ipsum dolor sit amet, 
-          consectetur adipiscing</Text>:null}
+        {detailArrow === 'down' ? <Text>{`
+          Mint 주소 : ${mintAdress }
+          Token 주소 : ${tokenAdress }
+          소유자 : ${owner }
+          `}</Text> : null}
       </ListDiv>
     </Div>
   )

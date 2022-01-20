@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { PagElm } from './pagElm';
-import { Upcoming } from '../../../api';
+import { main, Upcoming } from '../../../api';
 import { useQuery } from 'react-query'
 
 const PagDiv = styled.div`
@@ -47,7 +47,7 @@ const PageSlider = styled(Slider)`
 
 
 function MainPagination(){
-  const { isLoading, data } = useQuery("upcoming", Upcoming)
+  const { isLoading, data } = useQuery(["main","upcoming"], main.Upcoming)
   const UpcomingData = data
   const setting={
     dots:true,

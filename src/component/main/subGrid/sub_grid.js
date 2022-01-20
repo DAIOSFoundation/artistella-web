@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { SubElm } from './subElm'
 import {GridDiv} from '../mainGrid/main_grid';
-import { Popular } from '../../../api';
+import { main, Popular } from '../../../api';
 import {useQuery} from 'react-query';
 
 const Grid=styled.div`
@@ -39,7 +39,7 @@ const TopDiv=styled.div`
 `
 
 function SubGrid(){
-  const { isLoading, data } = useQuery("popular", Popular)
+  const { isLoading, data } = useQuery(["main","popular"], main.Popular)
   const PopularData = data?.collections
   return(isLoading? null:(
     <GridDiv>

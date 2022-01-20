@@ -69,5 +69,5 @@ export const GridContent = styled.div`
 
 export function onEle(e){
   e.preventDefault();
-  return (window.location.assign("/itemDetail"))
+  return (window.location.assign("/itemlist"))
 }

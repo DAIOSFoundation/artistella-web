@@ -6,6 +6,10 @@ import MoreCollection from '../component/detail/moreCollection/MoreCollection';
 import InfoList from '../component/detail/Detailcontent/infoList'
 import PageTitle from '../component/feed/title';
 import Layout from '../component/layout/Layout';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
+import { itemDetail } from '../api'
+
 
 const DetailLayout=styled.div`
   width: 80%;
@@ -19,14 +23,32 @@ const DetailContent = styled.div`
   display: flex;
 `
 
-function ItemDetail(){
-  return(
+const Button = styled.button`
+  width : 300px;
+  height : 100px;
+`
+
+function ItemDetail() {
+  const { mintAdress: mint } = useParams();
+  const { isLoading, data } = useQuery(["itemDetail", mint], itemDetail.mint);
+  const detailData = data?.results;
+  console.log("여기",data?.results);
+
+  return (
     <Layout>
       <DetailLayout>
         <PageTitle title={"Item Detail"} />
         <DetailContent>
-          <ItemHistory/>
-          <InfoList/>
+          <ItemHistory img={detailData?.img}/>
+          <InfoList
+            title={detailData?.title}
+            artisitName={detailData?.collectionName}
+            price={detailData?.price}
+            about={detailData?.content}
+            mintAdress={detailData?.mintAddress}
+            owner={detailData?.owner}
+            tokenAdress={detailData?.id}
+          />
         </DetailContent>
           <Activities/>
           <MoreCollection/>

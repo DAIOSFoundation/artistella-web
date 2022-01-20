@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import styled from 'styled-components';
-import { Carousel } from '../../../api';
+import { main} from '../../../api';
 import TransImage from './transImage';
 
 const ImageSlider = styled.div`
@@ -20,7 +20,8 @@ const ImageSlider = styled.div`
 `
 
 function SlideImage(){
-  const { isLoading, data } = useQuery("carousel", Carousel)
+  const { isLoading, data } = useQuery(["main", "carousel"], main.Carousel)
+  console.log(data);
   const CarouselData = data
   const setting={
     dots:true,

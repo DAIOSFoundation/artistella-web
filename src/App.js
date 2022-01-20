@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import ItemDetail from './screen/itemDetail';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { RecoilRoot } from 'recoil';
 
 
 const queryClient = new QueryClient();
@@ -16,6 +17,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
+      <RecoilRoot>
       <QueryClientProvider client={queryClient} >
         <HelmetProvider>
           <GlobalStyle />
@@ -30,13 +32,14 @@ function App() {
               <Route exact path='/artist'>
                   <Artist />
               </Route>
-              <Route exact path='/itemDetail'>
+              <Route path='/itemDetail/:mintAdress'>
                   <ItemDetail />
               </Route>
             </Switch>
           </BrowserRouter>
-        </HelmetProvider>
-      </QueryClientProvider>
+          </HelmetProvider>
+        </QueryClientProvider>
+      </RecoilRoot>
     </>
   );
 }
