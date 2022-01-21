@@ -11,7 +11,6 @@ const EleDiv_s = styled(EleDiv)`
   align-items: center;
   display: flex;
   flex-direction: column;
-
   &:hover{
     cursor:pointer;
   }
@@ -19,6 +18,7 @@ const EleDiv_s = styled(EleDiv)`
 
 const SubImgDiv = styled.div`
   width: 100%;
+  
 `
 
 const SubContentDiv = styled.div`

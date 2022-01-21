@@ -19,7 +19,13 @@ export const main = {
 export const itemList = {
         Skull: () => fetch(`${BASE_URL}/rpc/getListedNFTsByQuery?q={"$match":{"collectionSymbol":"skeleton_crew_skulls"},"$sort":{"createdAt":-1},"$skip":0,"$limit":20}`)
         .then((res) => res.json()),
-      
+
+        More:({queryKey})=>{
+          const [_, type]=queryKey;
+          return fetch(
+            `${BASE_URL}/${type}_collections?more=true`)
+            .then((res)=>res.json())}
+            
 }
 
 export const itemDetail = {

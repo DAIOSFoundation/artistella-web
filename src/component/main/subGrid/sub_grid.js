@@ -60,7 +60,7 @@ function SubGrid(){
 
 function MoreClick(e){
   e.preventDefault();
-  return (window.location.assign("/itemlist"))
+  return (window.location.assign("/collections/popular"))
 }
 
 

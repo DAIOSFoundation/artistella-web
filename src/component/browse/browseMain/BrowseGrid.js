@@ -23,6 +23,7 @@ function BrowseGrid({ shape }) {
   const { isLoading, data:coldata } = useQuery(["artist_list", name], artist.collections);
   const collectionData = coldata?.results;
   
+
   return isLoading ?  null :   (
     <GridDiv>
       <Grid Shape={shape}>
