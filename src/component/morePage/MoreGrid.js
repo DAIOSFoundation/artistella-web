@@ -10,9 +10,9 @@ import {useQuery} from 'react-query';
 const Grid=styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4,23.5%);
   grid-auto-rows: minmax(200px, auto);
-  grid-auto-columns: minmax(200px, auto);
+  grid-gap:26px;
 `
 const GridTitle = styled.span`
   font-size:30px;

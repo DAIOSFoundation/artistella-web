@@ -5,10 +5,11 @@ import {GridDiv} from '../mainGrid/main_grid';
 import { main, Popular } from '../../../api';
 import {useQuery} from 'react-query';
 
+
 const Grid=styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4,23.5%);
   grid-auto-rows: minmax(200px,auto);
   grid-gap: 26px;
 
@@ -64,55 +65,4 @@ function MoreClick(e){
 }
 
 
-
-const data = [
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  },
-  {
-    img : "images/grid.png",
-    header : "Lorem Ipsum",
-    text: "Dolor consequat laboris duis",
-    price : "1.2 SOL"
-  }
-]
 export default SubGrid;

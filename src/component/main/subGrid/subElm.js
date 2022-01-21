@@ -18,7 +18,6 @@ const EleDiv_s = styled(EleDiv)`
 
 const SubImgDiv = styled.div`
   width: 99%;
-  
 `
 
 const SubContentDiv = styled.div`
