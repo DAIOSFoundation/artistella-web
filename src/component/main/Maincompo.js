@@ -55,11 +55,8 @@ export const GridImgDiv = styled.div`
   width: 99%;
 `
 export const GridContent = styled.div`
-  width: 85%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 80%;
+  height: 100px;
   margin: 10px 0px;
    *{
     margin-top: 10px;

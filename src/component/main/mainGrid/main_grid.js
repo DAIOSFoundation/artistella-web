@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import styled from 'styled-components'
-import {  Skull } from '../../../api'
+import {  main } from '../../../api'
 import GridElm from './mainEle'
 
 export const GridDiv = styled.div`
@@ -16,7 +16,7 @@ export const GridDiv = styled.div`
 const Grid=styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(200px,50%);
   grid-gap: 26px;
   align-items: center;
@@ -27,31 +27,53 @@ const GridTitle = styled.div`
   height: 5%;
   display: inline-block;
   margin-bottom: 16px;
+  font-size:30px;
+  font-weight:bold;
+  color:black;
+`
+const TopDiv=styled.div`
+  width: 80%;
+  margin-bottom: 16px;
+  padding-top: 16px;
+`
+const MoreButton = styled.span`
+  width: 75px;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius:6px;
+  border: solid 1px black;
+  text-align: center;
+  float:right;
 
-  h1{
-    font-size:30px;
-    font-weight:bold;
-    color:black;
+  &:hover{
+    cursor:pointer;
   }
 `
 function MainGrid() {
-
-  return(
+  const { isLoading, data } = useQuery(["main","new"], main.New)
+  const NewData = data?.collections
+  return(isLoading?null:(
     <GridDiv>
-      <GridTitle>
-        <h1>Lorem Ipsum</h1>
-      </GridTitle>
+      <TopDiv>
+        <GridTitle>New Collections</GridTitle>
+        <MoreButton onClick={MoreClick}>More</MoreButton>
+      </TopDiv>
       <Grid>
         {
-          data.map( res =>
-            <GridElm img={res.img} header={res.header} text={res.text} date={res.date} />
+          NewData?.map( res =>
+            <GridElm img={res.image} header={res.name} text={res.description} date={res.createdAt} collectionName={res.symbol} />
           )
         }
       </Grid>
     </GridDiv>
   )
+  )
 }
 
+function MoreClick(e){
+  e.preventDefault();
+  return (window.location.assign("/collections/new"))
+}
 const data =[
     {
       img : "images/grid.png",

@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 import { EleDiv, GridContent, GridImgDiv, ImageHead, ImageSummary, onEle } from "../Maincompo"
 
 const EleDiv_m=styled(EleDiv)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   &:hover{
     cursor:pointer;
@@ -24,14 +24,16 @@ const GridImage=styled.img`
   min-width: 100px;
   height:100%;
   min-height: 100px;
+  object-fit:cover;
 `
 
 
 
-function GridElm({img,header,text,date}){
+function GridElm({img,header,text,date,collectionName}){
 
     return(
-      <EleDiv_m onClick={onEle}>
+      <Link to={`/artist/${collectionName}`} style={{textDecoration:'none'}}>
+        <EleDiv_m>
           <GridImgDiv>
             <GridImage src={img}></GridImage>
           </GridImgDiv>
@@ -41,6 +43,7 @@ function GridElm({img,header,text,date}){
             <ImageDate>{date}</ImageDate>
           </GridContent>
         </EleDiv_m>
+      </Link>
     )
   }
 

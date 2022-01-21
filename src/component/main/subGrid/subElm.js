@@ -17,14 +17,13 @@ const EleDiv_s = styled(EleDiv)`
 `;
 
 const SubImgDiv = styled.div`
-  width: 100%;
+  width: 99%;
   
 `
 
 const SubContentDiv = styled.div`
   width: 80%;
   height : 100px;
-  text-overflow:ellipsis;
   *{
     margin-top: 10px;
   }

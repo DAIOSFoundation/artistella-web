@@ -12,6 +12,9 @@ export const main = {
         Popular: () =>
                 fetch('https://api-mainnet.magiceden.io/popular_collections').then((res) => res.json())
         ,
+        New: () =>
+                fetch('https://api-mainnet.magiceden.io/new_collections').then((res)=>res.json())
+        ,
         
 
 }
