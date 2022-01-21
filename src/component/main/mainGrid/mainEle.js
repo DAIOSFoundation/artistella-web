@@ -32,7 +32,7 @@ const GridImage=styled.img`
 function GridElm({img,header,text,date,collectionName}){
 
     return(
-      <Link to={`/artist/${collectionName}`} style={{textDecoration:'none'}}>
+      <Link to={`/marketplace/${collectionName}`} style={{textDecoration:'none'}}>
         <EleDiv_m>
           <GridImgDiv>
             <GridImage src={img}></GridImage>

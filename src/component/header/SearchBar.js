@@ -53,16 +53,12 @@ function Searchs() {
   return(
     <SearchDiv>
       <SearchBardiv>
-        <SearchButton as="button" onClick={BrowseClick}> <img src={search} srcSet={{search2x,search3x} }/></SearchButton>
+        <SearchButton as="button"> <img src={search} srcSet={{search2x,search3x} }/></SearchButton>
         <Searchbar type={'text'} placeholder='Search Collections' />
       </SearchBardiv>
     </SearchDiv>
   );
  }
 
- function BrowseClick(e){
-  e.preventDefault()
-  return(window.location.assign("/artist"))
-}
 
  export default Searchs;

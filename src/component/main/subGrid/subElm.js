@@ -34,7 +34,7 @@ const SubContentDiv = styled.div`
 
 export function SubElm({img,header,text,collectionName}){
   return(
-    <Link to={`/artist/${collectionName}`} style={{textDecoration:'none'}}>
+    <Link to={`/marketplace/${collectionName}`} style={{textDecoration:'none'}}>
     <EleDiv_s>
       <SubImgDiv>
         <GridImage src={img}></GridImage>

@@ -74,45 +74,7 @@ function MoreClick(e){
   e.preventDefault();
   return (window.location.assign("/collections/new"))
 }
-const data =[
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
-    {
-      img : "images/grid.png",
-      header : "Lorem Ipsum",
-      text: "Dolor consequat laboris duis duis in consectetur dolor ut Lorem duis ex laborum dolore.",
-      date : "12/24/21"
-    },
 
-]
 
 
 export default MainGrid;
